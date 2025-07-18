@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuan Nguyen</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../headshot.jpeg" alt="Your Logo" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div class="logo-text">
+                        <h1>Tuan Nguyen</h1>
+                        <p>REAL ESTATE AGENT</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#search">SEARCH</a></li>
+                        <li><a href="#sellers">FOR SELLERS</a></li>
+                        <li><a href="#buyers">FOR BUYERS</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#blog">BLOG</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Ask me about Real Estate!</h2>
+                <p>Your trusted partner in finding the perfect home or selling your property</p>
+                
+                <div class="search-section">
+                    <div class="search-tabs">
+                        <button class="search-tab active">
+                            🏠 Find a Home
+                        </button>
+                        <button class="search-tab">
+                            💰 What's My Home's Value?
+                        </button>
+                    </div>
+                    
+                    <form class="search-form" id="searchForm">
+                        <input type="text" placeholder="City" required>
+                        <input type="text" placeholder="Zip Code">
+                        <select>
+                            <option value="">Min Beds</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                        <select>
+                            <option value="">Max Beds</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                        <select>
+                            <option value="">Min Baths</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                        <select>
+                            <option value="">Max Baths</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                        <input type="number" placeholder="Min Price" min="0">
+                        <input type="number" placeholder="Max Price" min="0">
+                    </form>
+                    
+                    <button class="search-btn" onclick="performSearch()">SEARCH</button>
+                    
+                    <div class="action-buttons">
+                        <a href="#" class="action-btn">
+                            🔍 SEARCH NEARBY
+                        </a>
+                        <a href="#" class="action-btn">
+                            📱 TEXT ME
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>My Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏡</div>
+                        <h3>Home Buying</h3>
+                        <p>Expert guidance through every step of the home buying process, from pre-approval to closing.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Home Selling</h3>
+                        <p>Strategic marketing and pricing to sell your home quickly and for the best possible price.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Market Analysis</h3>
+                        <p>Comprehensive market reports and property valuations to help you make informed decisions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3>Consultation</h3>
+                        <p>Free consultations to discuss your real estate goals and develop a customized strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📞 (714) 392-3636</p>
+                    <p>📧 TuanNguyen5enterprise@protonmail.com</p>
+                    <p>DRE: #02254544</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#search">Property Search</a>
+                    <a href="#about">About Me</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#buyers">For Buyers</a>
+                    <a href="#sellers">For Sellers</a>
+                    <a href="#valuation">Home Valuation</a>
+                    <a href="#market">Market Reports</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Your Real Estate Business. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        function performSearch() {
+            const form = document.getElementById('searchForm');
+            const formData = new FormData(form);
+            
+            // In a real application, you would send this data to your backend
+            alert('Search functionality would be implemented here with your MLS integration!');
+        }
+
+        // Tab switching
+        document.querySelectorAll('.search-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // You could switch between different search forms here
+                if (this.textContent.includes('Value')) {
+                    // Switch to home valuation form
+                    document.querySelector('.search-form').innerHTML = `
+                        <input type="text" placeholder="Property Address" required>
+                        <input type="text" placeholder="City" required>
+                        <input type="text" placeholder="State">
+                        <input type="text" placeholder="Zip Code">
+                    `;
+                } else {
+                    // Switch back to property search form
+                    location.reload();
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
