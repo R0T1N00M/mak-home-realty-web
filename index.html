@@ -47,9 +47,24 @@
 
     <main>
         <section id="home" class="hero">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Beautiful modern home exterior">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Luxury home with pool">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Contemporary house design">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Dream home with garden">
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h2>Ask me about Real Estate!</h2>
-                <p>Your trusted partner in finding the perfect home or selling your property</p>
+                <h2>Find Your Dream Home</h2>
+                <p>With a dependable real estate agent by your side, the journey to your dream home becomes seamless and enjoyable.</p>
                 
                 <div class="search-section">
                     <div class="search-tabs">
@@ -178,6 +193,24 @@
             // In a real application, you would send this data to your backend
             alert('Search functionality would be implemented here with your MLS integration!');
         }
+
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slideshow every 5 seconds
+        setInterval(nextSlide, 5000);
 
         // Tab switching
         document.querySelectorAll('.search-tab').forEach(tab => {
