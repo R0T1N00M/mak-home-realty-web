@@ -142,7 +142,7 @@ nav a:hover {
 
 /* Hero Section with Slideshow */
 .hero {
-    height: 115vh;
+    height: 120vh;
     display: flex;
     align-items: center;
     justify-content: center;
