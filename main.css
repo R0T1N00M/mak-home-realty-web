@@ -84,7 +84,7 @@ header {
 }
 
 .partner-logo-header {
-    max-height: 50px;
+    max-height: 100px;
     width: auto;
     max-width: 150px;
     object-fit: contain;
