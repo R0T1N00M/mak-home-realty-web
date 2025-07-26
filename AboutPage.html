@@ -58,19 +58,10 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-image">
-                        <img src="headshot.jpeg" alt="Tuan Nguyen - Real Estate Agent">
+                        <img src="headshot3.jpeg" alt="Tuan Nguyen - Real Estate Agent">
                         <div class="about-credentials">
                             <div class="credential-item">
                                 <strong>CalDRE License:</strong> #02254544
-                            </div>
-                            <div class="credential-item">
-                                <strong>Years in Business:</strong> TBC
-                            </div>
-                            <div class="credential-item">
-                                <strong>Properties Sold:</strong> TBC
-                            </div>
-                            <div class="credential-item">
-                                <strong>Client Satisfaction:</strong> TBC
                             </div>
                         </div>
                     </div>
@@ -139,7 +130,7 @@ indulge our foodie passions, traveling, and living a meaningful life.</p>
                             <h3>How It All Began</h3>
                             <p>I entered real estate with a passion for helping families find their perfect homes and achieve their property investment goals. Having lived in Southern California my entire life, I understand the unique character of each neighborhood and what makes this area such a special place to call home.</p>
                             
-                            <p>My background in finance gives me the analytical skills necessary to help clients make informed decisions, while my commitment to exceptional service ensures every transaction is handled with the utmost care and professionalism.</p>
+                            <p>My background in business owning gives me the analytical skills necessary to help clients make informed decisions, while my commitment to exceptional service ensures every transaction is handled with the utmost care and professionalism.</p>
                             
                             <h3>What Drives Me</h3>
                             <p>There's nothing quite like the moment when I hand over the keys to a family's new home or help a seller achieve their goals. Real estate isn't just about transactions – it's about dreams, futures, and creating the foundation for life's most important moments.</p>
@@ -149,22 +140,25 @@ indulge our foodie passions, traveling, and living a meaningful life.</p>
                         </div>
                         
                         <div class="story-stats">
-                            <h3>By the Numbers</h3>
-                            <div class="stat-item">
-                                <div class="stat-number">TBC</div>
-                                <div class="stat-label">Properties Sold</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">TBC</div>
-                                <div class="stat-label">Total Sales Volume</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">TBC</div>
-                                <div class="stat-label">Years Experience</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">TBC</div>
-                                <div class="stat-label">Client Satisfaction</div>
+                            <h3>Featured Properties</h3>
+                            <div class="property-slideshow">
+                                <div class="slideshow-container">
+                                    <div class="slide active">
+                                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.Kty353WOfCovYGuBLSTf7AHaE8%3Fpid%3DApi&f=1&ipt=f43c00210920b1aa8363229717d4903ebbecd02ef8f348bf46a46b439165fe87&ipo=images" alt="Beautiful Family Home">
+                                    </div>
+                                    
+                                    <div class="slide">
+                                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.hqntz-2OLBTGCgbrXRjWDgHaDt%3Fpid%3DApi&f=1&ipt=5c42ada66f5ba51d6d17b4ad510ee6950d8f274491ef8b282bc7da5782453653&ipo=images" alt="Luxury Condo">
+                                    </div>
+                                    
+                                    <div class="slide">
+                                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.hqKp10MP2YV5XfLBDg7aKwHaEI%3Fpid%3DApi&f=1&ipt=72a829e7cbbb9b5034eac5c5300ee18b4a2bc1cfa7ed8fca8681a37031b689fa&ipo=images" alt="Suburban Property">
+                                    </div>
+                                    
+                                    <div class="slide">
+                                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.rSKHIAMaFYq9UCHLq1OMkAHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=6970f50e7732dfb0b9ae1d66d995228f364922463f1ed9a12ba398b397cda748&ipo=images" alt="Starter Home">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -234,6 +228,27 @@ indulge our foodie passions, traveling, and living a meaningful life.</p>
     </footer>
 
     <script>
+        // Property slideshow functionality (auto-only)
+        let slideIndex = 0;
+        const propertySlides = document.querySelectorAll('.property-slideshow .slide');
+        const totalPropertySlides = propertySlides.length;
+        
+        function showSlide(index) {
+            propertySlides.forEach(slide => slide.classList.remove('active'));
+            
+            if (propertySlides[index]) {
+                propertySlides[index].classList.add('active');
+            }
+        }
+        
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % totalPropertySlides;
+            showSlide(slideIndex);
+        }
+        
+        // Auto-advance property slideshow every 5 seconds
+        setInterval(nextSlide, 5000);
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
