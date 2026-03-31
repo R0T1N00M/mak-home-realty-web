@@ -280,45 +280,77 @@ function searchNearby() {
                 document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
                 
-                // You could switch between different search forms here
+                // Switch between different search forms
                 if (this.textContent.includes('Value')) {
                     // Switch to home valuation form
                     document.querySelector('.search-form').innerHTML = `
-                        <input type="text" placeholder="Property Address" required>
-                        <input type="text" placeholder="City" required>
-                        <input type="text" placeholder="State">
-                        <input type="text" placeholder="Zip Code">
+                        <input type="text" id="valuationAddress" placeholder="Property Address" required>
+                        <input type="text" id="valuationCity" placeholder="City" required>
+                        <input type="text" id="valuationState" placeholder="State" required>
+                        <input type="text" id="valuationZip" placeholder="Zip Code" required>
                     `;
+                    document.getElementById('searchBtn').textContent = 'GET HOME VALUE';
+                    document.getElementById('searchBtn').onclick = getHomeValue;
                 } else {
                     // Switch back to property search form
-                    location.reload();
+                    document.querySelector('.search-form').innerHTML = `
+                        <input type="text" id="cityInput" placeholder="City" required>
+                        <input type="text" id="zipInput" placeholder="Zip Code">
+                        <select id="minBeds">
+                            <option value="">Min Beds</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                        <select id="maxBeds">
+                            <option value="">Max Beds</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                        <select id="minBaths">
+                            <option value="">Min Baths</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                        <select id="maxBaths">
+                            <option value="">Max Baths</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                        <input type="number" id="minPrice" placeholder="Min Price" min="0">
+                        <input type="number" id="maxPrice" placeholder="Max Price" min="0">
+                    `;
+                    document.getElementById('searchBtn').textContent = 'SEARCH';
+                    document.getElementById('searchBtn').onclick = null;
                 }
             });
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        // Get home valuation
+        async function getHomeValue() {
+            const address = document.getElementById('valuationAddress').value.trim();
+            const city = document.getElementById('valuationCity').value.trim();
+            const state = document.getElementById('valuationState').value.trim();
+            const zip = document.getElementById('valuationZip').value.trim();
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            if (!address || !city || !state || !zip) {
+                alert('Please fill in all fields.');
+                return;
             }
-        });
+
+            // Search Zillow for the property
+            const zillowURL = `https://www.zillow.com/homes/${encodeURIComponent(zip)}_rb/`;
+            window.open(zillowURL, '_blank');
+        }
     </script>
 </body>
 </html>
