@@ -12,11 +12,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="headshot.jpeg" alt="Tuan Nguyen" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="headshot.jpeg" alt="Tuan Nguyen" style="width: 60px; height: 60px; border-radius: 40%; object-fit: cover;">
                     <div class="logo-text">
                         <h1>Tuan Nguyen</h1>
-                        <p>REAL ESTATE AGENT</p>
+                        <p>Realtor & Notary Public</p>
                         <p>CalDRE: #02254544</p>
+                        <p>COMMISSION NUMBER & EXP: 2528937, 8.3.20209</p>
                     </div>
                 </div>
                 
@@ -34,8 +35,7 @@
                 <nav>
                     <ul>
                         <li><a href="#home">HOME</a></li>
-                        <li><a href="#search">SEARCH</a></li>
-                        <li><a href="#sellers">FOR SELLERS</a></li>
+
                         <li><a href="#buyers">FOR BUYERS</a></li>
                         <li><a href="AboutPage.html">ABOUT</a></li>
                         <li><a href="ContactPage.html">CONTACT</a></li>
@@ -46,86 +46,148 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="slideshow-container">
-                <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Beautiful modern home exterior">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Luxury home with pool">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Contemporary house design">
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Dream home with garden">
-                </div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2>Find Your Dream Home</h2>
-                <p>Discover your dream home with a dependable real estate agent by your side, whose purpose is to make the journey an easy, seamless and beautiful one. let’s do it together</p>
-                
-                <div class="search-section">
-                    <div class="search-tabs">
-                        <button class="search-tab active">
-                            🏠 Find a Home
-                        </button>
-                        <button class="search-tab">
-                            💰 What's My Home's Value?
-                        </button>
-                    </div>
-                    
-                    <form class="search-form" id="searchForm">
-                        <input type="text" placeholder="City" required>
-                        <input type="text" placeholder="Zip Code">
-                        <select>
-                            <option value="">Min Beds</option>
-                            <option value="1">1+</option>
-                            <option value="2">2+</option>
-                            <option value="3">3+</option>
-                            <option value="4">4+</option>
-                            <option value="5">5+</option>
-                        </select>
-                        <select>
-                            <option value="">Max Beds</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5+</option>
-                        </select>
-                        <select>
-                            <option value="">Min Baths</option>
-                            <option value="1">1+</option>
-                            <option value="2">2+</option>
-                            <option value="3">3+</option>
-                            <option value="4">4+</option>
-                        </select>
-                        <select>
-                            <option value="">Max Baths</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4+</option>
-                        </select>
-                        <input type="number" placeholder="Min Price" min="0">
-                        <input type="number" placeholder="Max Price" min="0">
-                    </form>
-                    
-                    <button class="search-btn" onclick="performSearch()">SEARCH</button>
-                    
-                    <div class="action-buttons">
-                        <a href="#" class="action-btn">
-                            🔍 SEARCH NEARBY
-                        </a>
-                        <a href="#" class="action-btn">
-                            📱 TEXT ME
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="home" class="hero">
+    <div class="slideshow-container">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Beautiful modern home exterior">
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Luxury home with pool">
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Contemporary house design">
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Dream home with garden">
+      </div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h2>Find Your Dream Home</h2>
+      <p>Discover your dream home with a dependable real estate agent by your side, whose purpose is to make the journey an easy, seamless and beautiful one. Let’s do it together.</p>
+        <p>Find Your Dream Home</p>
+      <div class="search-section">
+        <div class="search-tabs">
+          <button class="search-tab active">🏠 Find a Home</button>
+          <button class="search-tab">💰 What's My Home's Value?</button>
+        </div>
+
+        <form class="search-form" id="searchForm">
+          <input type="text" id="cityInput" placeholder="City" required>
+          <input type="text" id="zipInput" placeholder="Zip Code">
+          <select id="minBeds">
+            <option value="">Min Beds</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+          </select>
+          <select id="maxBeds">
+            <option value="">Max Beds</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+          <select id="minBaths">
+            <option value="">Min Baths</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+          <select id="maxBaths">
+            <option value="">Max Baths</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
+          <input type="number" id="minPrice" placeholder="Min Price" min="0">
+          <input type="number" id="maxPrice" placeholder="Max Price" min="0">
+        </form>
+
+        <button class="search-btn" id="searchBtn">SEARCH</button>
+
+        <div class="action-buttons">
+          <button class="action-btn" onclick="searchNearby()">🔍 SEARCH NEARBY</button>
+          <a href="#contact" class="action-btn">📱 TEXT ME</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<script>
+function searchNearby() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async position => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+
+            try {
+                // Replace 'YOUR_API_KEY' with your actual Google Maps API key
+                const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=YOUR_API_KEY`);
+                const data = await response.json();
+
+                let zipcode = null;
+                if (data.results) {
+                    for (const result of data.results) {
+                        for (const component of result.address_components) {
+                            if (component.types.includes("postal_code")) {
+                                zipcode = component.long_name;
+                                break;
+                            }
+                        }
+                        if (zipcode) break;
+                    }
+                }
+
+                if (zipcode) {
+                    // Redirect to Zillow using ZIP code
+                    const url = `https://www.zillow.com/homes/${zipcode}_rb/`;
+                    window.location.href = url;
+                } else {
+                    alert("Could not determine your ZIP code.");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Error retrieving location information.");
+            }
+        }, () => {
+            alert("Unable to get your location. Please allow location access.");
+        });
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+}
+</script>
+
+<!-- 🔽 Add this script right before </body> -->
+<script>
+  document.getElementById('searchBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const city = document.getElementById('cityInput').value.trim();
+    const zip = document.getElementById('zipInput').value.trim();
+
+    // Prioritize zip if filled, otherwise use city
+    const query = zip || city;
+
+    if (query) {
+      const zillowURL = `https://www.zillow.com/homes/${encodeURIComponent(query)}_rb/`;
+      window.open(zillowURL, '_blank'); // open Zillow results in new tab
+    } else {
+      alert('Please enter a city or ZIP code.');
+    }
+  });
+</script>
+
 
         <section id="services" class="services">
             <div class="container">
